@@ -1,16 +1,16 @@
-typedef unsigned char *PUINT8;
-typedef unsigned char __xdata *PUINT8X;
-typedef const unsigned char __code *PUINT8C;
+typedef unsigned char* PUINT8;
+typedef unsigned char __xdata* PUINT8X;
+typedef const unsigned char __code* PUINT8C;
 typedef unsigned char __xdata UINT8X;
-typedef unsigned char  __data             UINT8D;
+typedef unsigned char __data UINT8D;
 
+#include "CH559.h"
+#include "USBHost.h"
+#include "uart.h"
+#include "util.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include "CH559.h"
-#include "util.h"
-#include "USBHost.h"
-#include "uart.h"
 
 SBIT(LED, 0x90, 6);
 
@@ -24,10 +24,9 @@ void main()
     resetHubDevices(1);
     initUSB_Host();
     DEBUG_OUT("Ready\n");
-	sendProtocolMSG(MSG_TYPE_STARTUP,0, 0x00, 0x00, 0x00, 0);
-    while(1)
-    {
-        if(!(P4_IN & (1 << 6)))
+    sendProtocolMSG(MSG_TYPE_STARTUP, 0, 0x00, 0x00, 0x00, 0);
+    while (1) {
+        if (!(P4_IN & (1 << 6)))
             runBootloader();
         processUart();
         s = checkRootHubConnections();
