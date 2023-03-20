@@ -40,6 +40,8 @@ void sendProtocolMSG(unsigned char msgtype,
                      unsigned char endpoint,
                      unsigned char __xdata* msgbuffer)
 {
+    //printf("send message of length %d\n", length);
+    //return;
     unsigned short i;
     putchar(0xFE);
     putchar(length);
@@ -69,6 +71,8 @@ void sendHidPollMSG(unsigned char msgtype,
                     unsigned char idProductL,
                     unsigned char idProductH)
 {
+    //printf("send message of length %d\n", length);
+    //return;
     unsigned short i;
     putchar(0xFE);
     putchar(length);

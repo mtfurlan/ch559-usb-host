@@ -109,7 +109,7 @@ void filterCommand(int buffLength, packetthing_t* packet)
 void setup(void)
 {
     Serial.begin(115200);
-    Serial2.begin(400000, SERIAL_8N1);
+    Serial2.begin(1000000, SERIAL_8N1);
     Serial.println("OK There");
 }
 
