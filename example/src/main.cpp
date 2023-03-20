@@ -48,8 +48,8 @@ void printHex(uint8_t* buf, size_t len)
 
 void filterCommand(int buffLength, packetthing_t* packet)
 {
-    printHex((uint8_t*)packet, buffLength);
-    Serial.println();
+    //printHex((uint8_t*)packet, buffLength);
+    //Serial.println();
     switch (packet->msgType) {
         case MSG_TYPE_CONNECTED:
             Serial.print("Device Connected on port");
